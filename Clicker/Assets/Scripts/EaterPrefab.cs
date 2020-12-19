@@ -12,7 +12,6 @@ public class EaterPrefab : MonoBehaviour
     }
     public void Created()
     {
-        //this.transform.SetParent(UiManager.instance.transform,false);
 
         Debug.Log("Creat eater");
         if (eaters.Count == 0)
