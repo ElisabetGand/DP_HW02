@@ -35,8 +35,8 @@ public class SpawnEnemies : MonoBehaviour
         {
             Debug.Log("Spawn Enemy");
             Vector3 spawnedPos = new Vector3(1, 2,0);
-            GameObject spawnedEater = Instantiate(prefabtoSpawn, spawnedPos + transform.TransformPoint (0,0,0), gameObject.transform.rotation);
-            spawnedEater.GetComponent<RectTransform>().SetParent(UiManager.instance.transform,false);
+            GameObject spawnedEater = Instantiate(prefabtoSpawn, spawnedPos + transform.TransformPoint (0,0,0), Quaternion.Inverse(gameObject.transform.rotation), UiManager.instance.transform);
+            
             yield return new WaitForSeconds(spawnWait);
         }
     }

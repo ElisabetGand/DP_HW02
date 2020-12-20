@@ -22,15 +22,16 @@ public class GameManager : MonoBehaviour
                 Debug.Log("making an instance");
                 DontDestroyOnLoad(this.gameObject);
                 instance = this;
+                Debug.Log("Making a game");
+                game = new Game();
+                pointsToAdd = 1;
             }
             else
             {
                 Debug.Log("already have an instance");
-                Destroy(this);
+                Destroy(this.gameObject);
             }
-            Debug.Log("Making a game");
-            game = new Game();
-            pointsToAdd = 1;
+            
         }
         
     }
